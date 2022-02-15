@@ -1,0 +1,21 @@
+<section id="body">
+  <section *ngIf="productSlcts" id="basket">
+    <div *ngFor="let slct of productSlcts" class="product">
+      <div><img src="{{slct.imgSrc}}" /></div>
+      <div>{{slct.name}}</div>
+      <i (click)="rm(slct.id)" class="fas fa-times"></i>
+    </div>
+  </section>
+  <section id="section">
+    <div
+      *ngFor="let product of products"
+      id="c{{ product.id }}"
+      (click)="add('c' + product.id,product.id,product.select)"
+      class="product"
+    >
+      <div><img src="{{ product.imgSrc }}" /></div>
+      <div>{{ product.name }}</div>
+      <div class="slct" *ngIf="product.select"></div>
+    </div>
+  </section>
+</section>

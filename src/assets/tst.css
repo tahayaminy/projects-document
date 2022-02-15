@@ -1,0 +1,46 @@
+  .me {
+    float: right;
+    background-color: #EAFBEA80;
+    color: #1F6650 !important;
+  }
+  .you {
+    float: left;
+    background-color: #1F665080;
+    color: #EAFBEA !important;
+  }
+  .you,
+  .me {
+    margin: 10px 5px;
+    padding: 5px;
+    width: calc(90% - 10px);
+    border-radius: 3px;
+  }
+  .you > span,
+  .me > span {
+    display: block;
+    direction: ltr;
+  }
+  
+  .listitem {
+    width: 50%;
+    margin: 20px auto;
+    background-color: #1f1d36;
+    padding: 3%;
+    border-radius: 10px;
+    user-select: none;
+  }
+  .listitem i{transition: .1s;}
+  .listitem i:hover {
+    cursor: pointer;
+    color: #864879;
+  }
+  .listitem i:active{
+      color: #e9a6a6;
+  }
+  .listitem .fa-check-circle {
+    float: left;
+    font-size: 150%;
+  }
+  .listitem .clear {
+    clear: both;
+  }

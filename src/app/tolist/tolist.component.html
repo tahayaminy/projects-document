@@ -1,0 +1,21 @@
+<section id="body">
+  <article>
+    <section id="pannel">
+      <input
+        placeholder="کاری که باید انجام بدم..."
+        type="text"
+        id="work"
+        onkeypress="if(event.keyCode === 13){add()}"
+      />
+      <i class="fas fa-clipboard-list" (click)="add()"></i>
+    </section>
+    <section id="lists">
+      <p class="listitem" *ngFor="let tolist of tolists">
+        {{tolist.todo}}
+        <i class="fas fa-check-circle" id="c{{tolist.id}}" (click)="end('c'+tolist.id)"></i>
+        <i class="clear"></i>
+      </p>
+      
+    </section>
+  </article>
+</section>

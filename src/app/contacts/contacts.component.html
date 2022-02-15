@@ -1,0 +1,20 @@
+<section id="body">
+    <article id="article">
+      <div *ngFor="let contact of contacts" >
+        <p class="name">{{contact.name}}</p>
+        <p class="numb">{{contact.phone}} <i id="c{{contact.id}}" (click)="del('c'+contact.id)" class="fas fa-trash-alt"></i></p>
+        <p class="clear"></p>
+      </div>
+    </article>
+    <span onclick="document.getElementById('glass').style.display='block';" class="fas fa-user-plus"></span>
+    
+    <section id="glass">
+        <input id="name" placeholder="نام مخاطب" type="text" />
+        <input id="numb" placeholder="شماره مخاطب" type="tel" />
+        <div>
+          <button (click)="cls()" class="fas fa-times"></button>
+          <button (click)="add()" class="fas fa-check"></button>
+        </div>
+      </section>
+      <div style="width: 100%;height: 1%;"></div>
+  </section>

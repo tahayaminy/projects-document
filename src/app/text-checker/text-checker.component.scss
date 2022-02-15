@@ -1,0 +1,21 @@
+#body{
+    text-align: center;
+    padding-top: 10%;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding-bottom: 10%;
+}
+textarea{
+    width: 50%;
+    min-width: 200px;
+    border: 2px solid rgb(13, 110, 253);
+    border-radius: 5px;
+    height: 100px;
+    resize: none; 
+    direction: rtl;    
+    transition: .1s;       
+}
+textarea:focus{
+    outline: 5px solid rgba(13, 110, 253, .5);
+}

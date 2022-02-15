@@ -1,0 +1,21 @@
+$black: #222831;
+$white: #eeeeee;
+$primary: #393e46;
+$secondary: #00adb5;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin hidescroll($el) {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  #{$el}::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  #{$el}{
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

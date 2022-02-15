@@ -1,0 +1,25 @@
+<head>
+  
+</head>
+<section id="body">
+  <i (click)="showchat()" id="chaticon" class="fas fa-comment-dots"></i>
+  <section id="chatbox">
+    <i (click)="hiddenchat()" class="far fa-times-circle"></i>
+    <div id="header">
+      <i class="far fa-user-circle"></i>esm
+      <div id="typing">
+        typing
+        <div id="bullet">
+          <span class="type"></span>
+          <span class="type"></span>
+          <span class="type"></span>
+        </div>
+      </div>
+    </div>
+    <div id="main"></div>
+    <div id="footer">
+      <i (click)="sendmsg()" class="fas fa-location-arrow"></i>
+      <textarea placeholder="Message" id="msg"></textarea>
+    </div>
+  </section>
+</section>

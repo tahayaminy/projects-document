@@ -1,0 +1,24 @@
+<section id="body">
+  <section id="inner">
+    <section *ngFor="let test of tests" class="section">
+      {{test.ques}}
+      <div>
+        <label *ngFor="let answer of test.answers" class="checkbox">
+          {{answer}}
+          <input name="r{{test.id}}" value="{{test.answers.indexOf(answer)}}" type="radio" />
+          <span class="rad check"></span>
+        </label>
+      </div>
+    </section>
+    <article id="article">
+      <div id="result">
+        <p>تعداد سوالات درست<span id="green"></span></p>
+        <p>تعداد سوالات غلط<span id="red"></span></p>
+        <p>تعداد کل سوالات<span id="all"></span></p>
+        <br /><br />
+        <button id="cls" (click)="cls()">بستن</button>
+      </div>
+    </article>
+    <button id="exam" (click)="exam()">اتمام آزمون</button>
+  </section>
+</section>

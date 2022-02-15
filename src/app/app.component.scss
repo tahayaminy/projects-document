@@ -1,0 +1,26 @@
+@import "../styles/ex";
+nav {
+  position: absolute;
+  background-color: $primary;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  overflow-y: auto;
+  ul {
+    a{text-decoration: none;color: inherit;}
+    li {
+      list-style-type: none;
+      padding: .5em 2em;
+      margin: 0;
+      border-bottom: 2px solid $black;
+      transition: .2s ease-out;
+      &:hover{
+          color: $secondary;
+          padding: 1em 2em;
+          cursor: pointer;
+      }
+    }
+  }
+  @include hidescroll("&");
+}
