@@ -13,6 +13,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { BasketComponent } from './basket/basket.component';
 import { TestComponent } from './test/test.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
+import { Mp3playerComponent } from './mp3player/mp3player.component';
 
 const routes: Routes = [
   {path:'text-checker',component:TextCheckerComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:'contacts',component:ContactsComponent},
   {path:'basket',component:BasketComponent},
   {path:'test',component:TestComponent},
-  {path:'image-slider',component:ImageSliderComponent}
+  {path:'image-slider',component:ImageSliderComponent},
+  {path:'mp3player',component:Mp3playerComponent}
 ];
 
 @NgModule({

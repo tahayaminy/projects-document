@@ -1,0 +1,23 @@
+<section dir="ltr" id="body">
+    <section id="section">
+        <label for="music">Choose Music...</label><i class="fas fa-check-circle d-none"></i><br>
+        <input type="file" id="music" #music (change)="check(music,'p')" />
+        <label for="cover">Choose Cover...</label><i class="fas fa-check-circle d-none"></i><br>
+        <input type="file" id="cover" #cover (change)="check(cover,'p')" />
+        <input
+          type="text"
+          class="text"
+          #artist
+          placeholder="artist name"
+          (input)="check(artist)"
+        /><i class="fas fa-check-circle d-none"></i>
+        <input
+          type="text"
+          class="text"
+          #name
+          placeholder="music name"
+          (input)="check(name)"
+        /><i class="fas fa-check-circle d-none"></i><br />
+        <i class="fas fa-headphones" (click)="openWin()"></i>
+      </section>
+</section>

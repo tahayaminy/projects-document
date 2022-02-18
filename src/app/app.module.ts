@@ -15,6 +15,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { BasketComponent } from './basket/basket.component';
 import { TestComponent } from './test/test.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
+import { Mp3playerComponent } from './mp3player/mp3player.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ImageSliderComponent } from './image-slider/image-slider.component';
     ContactsComponent,
     BasketComponent,
     TestComponent,
-    ImageSliderComponent
+    ImageSliderComponent,
+    Mp3playerComponent
   ],
   imports: [
     BrowserModule,
