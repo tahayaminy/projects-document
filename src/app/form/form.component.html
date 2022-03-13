@@ -1,0 +1,92 @@
+<section id="body">
+    <form>
+        <div>
+          <input oninvalid="event.preventDefault()" type="text" (blur)="namecheck(this,0)" minlength="3" required/>
+          <label class="Lanime" for="text">text</label>
+        </div>
+        <p class="p">enter at least 3</p>
+        <div>
+          <input oninvalid="event.preventDefault()" (blur)="emailcheck(this,1)" type="email" required/>
+          <label class="Lanime" for="email">email</label>
+        </div>
+        <p class="p">enter valid email</p>
+        <div>
+          <input id="password" #password oninvalid="event.preventDefault()" type="password" (blur)="passcheck(password,2)" minlength="6" required/>
+          <label class="Lanime" for="password">password</label>
+          <i class="far fa-eye-slash" style="position: absolute;top: 50%;left: 30px;transform: translate(-50%,-50%);cursor: pointer;" #eye (click)="showPass()"></i>
+        </div>
+        <p style="display: block;">
+          <span class="passcheck">length at least 6</span>
+          <span class="passcheck">numbers</span>
+          <span class="passcheck">LETTERS</span>
+          <span class="passcheck">letters</span>
+          <span class="passcheck">symbols</span>
+        </p>
+        <div id="number">
+          <i (click)="down()" class="fas fa-angle-down"></i>
+          <input #numbervalue value="1" type="number" min="1" max="5" />
+          <i (click)="up()" class="fas fa-angle-up"></i>
+        </div>
+        <label class="checkbox"
+          >one
+          <input type="checkbox" />
+          <span class="check"></span>
+        </label>
+        <label class="checkbox"
+          >tow
+          <input type="checkbox" />
+          <span class="check"></span>
+        </label>
+        <label class="checkbox"
+          >three
+          <input type="checkbox" />
+          <span class="check"></span>
+        </label>
+        <br><br><br>
+        <label class="checkbox">
+          one
+          <input checked name="radio" type="radio" />
+          <span class="rad check"></span>
+        </label>
+        <label class="checkbox">
+          tow
+          <input name="radio" type="radio" />
+          <span class="rad check"></span>
+        </label>
+        <label class="checkbox">
+          three
+          <input name="radio" type="radio" />
+          <span class="rad check"></span>
+        </label>
+        <div><input type="color" value="#B85C38" /></div>
+        <div class="select" tabindex="0">
+          <span class="selectedValue">ONE</span>
+          <i class="fas fa-angle-down"></i>
+          <div class="options">
+            <div>
+              <b>option group</b>
+              <span onclick="select(this,0,true)" class="selected">one</span>
+              <span onclick="select(this,1,true)">tow</span>
+              <span onclick="select(this,2,true)">three</span>
+            </div>
+            <div>
+              <b>option group</b>
+              <span onclick="select(this,3,true)">four</span>
+              <span onclick="select(this,4,true)">five</span>
+            </div>
+            <span onclick="select(this,5,false)">
+              six
+            </span>
+            <span onclick="select(this,6,false)">
+              seven
+            </span>
+            <span onclick="select(this,7,false)">eight</span>
+          </div>
+        </div>
+        <div>
+          <input type="search" (blur)="searchbox(this,3)"/>
+          <label class="Lanime" for="search">search</label>
+        </div>
+        <div><input type="submit" value="button" /></div>
+      </form>
+</section>

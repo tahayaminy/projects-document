@@ -16,6 +16,7 @@ import { BasketComponent } from './basket/basket.component';
 import { TestComponent } from './test/test.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { Mp3playerComponent } from './mp3player/mp3player.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { Mp3playerComponent } from './mp3player/mp3player.component';
     BasketComponent,
     TestComponent,
     ImageSliderComponent,
-    Mp3playerComponent
+    Mp3playerComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
