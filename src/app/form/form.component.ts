@@ -47,6 +47,7 @@ export class FormComponent implements OnInit {
     }
   }
   namecheck(el, child) {
+    var el=el.srcElement;
     var element = this.p[child] as HTMLElement;
     if (!el.checkValidity()) {
       element.style.display = 'block';
@@ -58,7 +59,7 @@ export class FormComponent implements OnInit {
     this.label(el, child);
   }
   searchbox(el,child){
-      this.label(el,child);
+      this.label(el.srcElement,child);
   }
   emailcheck(el,child){
     var element= this.p[child] as HTMLElement;
@@ -123,14 +124,17 @@ export class FormComponent implements OnInit {
       }
   }
 
-  // var selectId=0;
-  // function select(el,id,group){
-  //     var options = group? el.parentElement.parentElement:el.parentElement;
-  //     var optionList=options.querySelectorAll('span');
-  //     document.querySelector('.selectedValue').innerText=optionList[id].innerText;
-  //     optionList[selectId].classList.remove('selected');
-  //     optionList[id].classList.add('selected');
-  //     selectId=id;
-  //     options.parentElement.blur();
-  // }
+  selectId=0;
+  select(event,id,group){
+    var target =event.srcElement;
+      var options = group ? target?.parentElement?.parentElement : target?.parentElement;
+      var optionList=options.querySelectorAll('span');
+      var selectValue:HTMLElement=document.querySelector('.selectedValue')!;
+      
+      selectValue.innerText=optionList[id].innerText;
+      optionList[this.selectId].classList.remove('selected');
+      optionList[id].classList.add('selected');
+      this.selectId=id;
+      options!.parentElement!.blur();
+  }
 }

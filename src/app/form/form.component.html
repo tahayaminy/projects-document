@@ -1,12 +1,12 @@
 <section id="body">
     <form>
         <div>
-          <input oninvalid="event.preventDefault()" type="text" (blur)="namecheck(this,0)" minlength="3" required/>
+          <input oninvalid="event.preventDefault()" type="text" #text (blur)="namecheck($event,0)" minlength="3" required/>
           <label class="Lanime" for="text">text</label>
         </div>
         <p class="p">enter at least 3</p>
         <div>
-          <input oninvalid="event.preventDefault()" (blur)="emailcheck(this,1)" type="email" required/>
+          <input oninvalid="event.preventDefault()" #email (blur)="emailcheck(email,1)" type="email" required/>
           <label class="Lanime" for="email">email</label>
         </div>
         <p class="p">enter valid email</p>
@@ -65,26 +65,26 @@
           <div class="options">
             <div>
               <b>option group</b>
-              <span onclick="select(this,0,true)" class="selected">one</span>
-              <span onclick="select(this,1,true)">tow</span>
-              <span onclick="select(this,2,true)">three</span>
+              <span (click)="select($event,0,true)" class="selected">one</span>
+              <span (click)="select($event,1,true)">tow</span>
+              <span (click)="select($event,2,true)">three</span>
             </div>
             <div>
               <b>option group</b>
-              <span onclick="select(this,3,true)">four</span>
-              <span onclick="select(this,4,true)">five</span>
+              <span (click)="select($event,3,true)">four</span>
+              <span (click)="select($event,4,true)">five</span>
             </div>
-            <span onclick="select(this,5,false)">
+            <span (click)="select($event,5,false)">
               six
             </span>
-            <span onclick="select(this,6,false)">
+            <span (click)="select($event,6,false)">
               seven
             </span>
-            <span onclick="select(this,7,false)">eight</span>
+            <span (click)="select($event,7,false)">eight</span>
           </div>
         </div>
         <div>
-          <input type="search" (blur)="searchbox(this,3)"/>
+          <input type="search" (blur)="searchbox($event,3)"/>
           <label class="Lanime" for="search">search</label>
         </div>
         <div><input type="submit" value="button" /></div>
