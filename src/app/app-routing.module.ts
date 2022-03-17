@@ -16,6 +16,7 @@ import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { Mp3playerComponent } from './mp3player/mp3player.component';
 import { FormComponent } from './form/form.component';
 import { LenzComponent } from './lenz/lenz.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 const routes: Routes = [
   {path:'text-checker',component:TextCheckerComponent},
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path:'image-slider',component:ImageSliderComponent},
   {path:'mp3player',component:Mp3playerComponent},
   {path:'form',component:FormComponent},
-  {path:'lenz',component:LenzComponent}
+  {path:'lenz',component:LenzComponent},
+  {path:'calendar',component:CalendarComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,126 @@
+
+    $bg:#24A19C;
+    $txt:#FAEEE7;
+    $prim:#325288;
+    $scnd:#D96098;
+
+*{
+    margin: 0;padding: 0;
+}
+#body{
+    background-color: $bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: ltr;
+}
+article{
+    margin-top: 5vh;
+    width: 400px;
+    background-color: $txt;
+    color: $prim;
+    border-radius: .5em;
+}
+
+.banner{
+    background-color: $prim;
+    color: $txt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    border-radius: .5em .5em 0 0;
+}
+.banner>div{
+    text-align: center;
+}
+.banner>div>p:first-child{
+    font-size: 150%;
+    padding-bottom: 1em;
+}
+.fa-angle-left,.fa-angle-right{
+    cursor: pointer;
+    color: $bg;
+    transition: .5s;
+    padding: 50px;
+}
+.fa-angle-left:hover,.fa-angle-right:hover{
+    color: $txt;
+}
+.fa-angle-left{
+    margin-left: .7em;
+    font-size: 20px;
+    padding-left:0;
+}
+.fa-angle-right{
+    margin-right: .7em;
+    font-size: 20px;
+    padding-right:0;
+}
+.days{
+    display: grid;
+    grid-template-columns: 40px 40px 40px 40px 40px 40px 40px;
+    grid-template-rows: 40px 40px 40px 40px 40px;
+    justify-content: space-evenly;  
+    align-content: space-evenly;
+    height: 250px;
+}
+.week{
+    display: grid;
+    grid-template-columns: 40px 40px 40px 40px 40px 40px 40px;
+    grid-template-rows: 40px;
+    justify-content: space-evenly;  
+    align-content: space-evenly;
+    height: 40px;
+}
+
+.week>div{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .3em;
+    border: 3px solid transparent;
+    transition: .3s ease-out;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.days>div{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .3em;
+    border: 3px solid transparent;
+    transition: .3s ease-out;
+    cursor: pointer;
+}
+.days>div:hover{
+    border-color: $scnd;
+}
+.days>.today{
+    background-color: $bg;
+    color: $txt;
+}
+.week>.today{
+    color: $scnd;
+}
+@media only screen and (max-width:425px){
+    article{
+        width: 300px;
+    }
+    .days,.week{
+        grid-template-columns: 30px 30px 30px 30px 30px 30px 30px;
+    }
+    .days{
+        grid-template-rows: 30px 30px 30px 30px 30px;
+        height: 200px;
+        margin: -5px auto;
+    }
+    .week{
+        font-size: 85%;
+        grid-template-rows: 30px;
+        height: 30px;
+    }
+}
