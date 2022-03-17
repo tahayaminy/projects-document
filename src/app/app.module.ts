@@ -17,6 +17,7 @@ import { TestComponent } from './test/test.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { Mp3playerComponent } from './mp3player/mp3player.component';
 import { FormComponent } from './form/form.component';
+import { LenzComponent } from './lenz/lenz.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FormComponent } from './form/form.component';
     TestComponent,
     ImageSliderComponent,
     Mp3playerComponent,
-    FormComponent
+    FormComponent,
+    LenzComponent
   ],
   imports: [
     BrowserModule,
