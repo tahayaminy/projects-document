@@ -1,5 +1,12 @@
 @import './styles/ex';
-
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import './styles/ex';
+#body {
+    border-radius: 10px;
+    height: 450px;
+    overflow-y: auto;
+    @include hidescroll('&');
+  }
 $bg:#24A19C;
 $txt:#FAEEE7;
 $prim:#325288;
@@ -12,6 +19,7 @@ body{
     padding-top: 2em;
     padding-left: .7em;
 }
+
 .days>div{
     text-align: center;
     display: flex;

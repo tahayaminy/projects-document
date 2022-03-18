@@ -19,6 +19,7 @@ import { Mp3playerComponent } from './mp3player/mp3player.component';
 import { FormComponent } from './form/form.component';
 import { LenzComponent } from './lenz/lenz.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     Mp3playerComponent,
     FormComponent,
     LenzComponent,
-    CalendarComponent
+    CalendarComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,

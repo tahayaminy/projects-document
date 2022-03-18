@@ -17,6 +17,7 @@ import { Mp3playerComponent } from './mp3player/mp3player.component';
 import { FormComponent } from './form/form.component';
 import { LenzComponent } from './lenz/lenz.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { WeatherComponent } from './weather/weather.component';
 
 const routes: Routes = [
   {path:'text-checker',component:TextCheckerComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path:'mp3player',component:Mp3playerComponent},
   {path:'form',component:FormComponent},
   {path:'lenz',component:LenzComponent},
-  {path:'calendar',component:CalendarComponent}
+  {path:'calendar',component:CalendarComponent},
+  {path:'weather',component:WeatherComponent}
 ];
 
 @NgModule({
