@@ -40,7 +40,8 @@ export class WeatherComponent implements OnInit {
     var api;
     var current: number[] = [0];
     if (navigator.cookieEnabled) {
-      let check = this.getCookie('api');
+      var check = this.getCookie('api');      
+      var checkprev = this.getCookie('prevsunset');
       if (check != '') {
         api = check;
         useData(JSON.parse(api));
@@ -229,31 +230,25 @@ export class WeatherComponent implements OnInit {
         $('#gold').style.strokeDashoffset = '-383';
         $('.cont-sun--moon').style.transform = 'rotate(450deg)';
         //prevsunset
-        let httpcheck = new XMLHttpRequest();
-        httpcheck.onload = () => {
-          if (httpcheck.responseText) {
-            console.log('yes');
-            dayBreakfunc(httpcheck.responseText);
+        var prevsunset;
+          if (checkprev != "") {
+            prevsunset=checkprev;
+            dayBreakfunc(JSON.parse(prevsunset));
           } else {
-            console.log('no');
-            let http = new XMLHttpRequest();
             fetch(
               `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=37.1955948&lon=50.1529566&units=metric&dt=${
                 (data.today.dt * 1000 - 24 * 60 * 60 * 1000) / 1000
-              }&appid=IsSecret`
+              }&appid=81a57d03343af64fed7d77b4fdcb7340`
             )
               .then((get) => get.json())
               .then((prev) => {
-                http.open('POST', './prevcookie.php');
-                http.setRequestHeader(
-                  'Content-type',
-                  'application/x-www-form-urlencoded'
-                );
-                http.send(`prevsunset=${prev.current.sunset}`);
+                let d = new Date();
+                d.setTime(d.getTime() + (12*60*60*1000));
+                let expires = "expires=" + d.toUTCString();
+                document.cookie=`prevsunset=${prev.current.sunset};${expires}`;
                 dayBreakfunc(prev.current.sunset);
               });
           }
-        };
         function dayBreakfunc(prevsunset) {
           console.log(prevsunset);
           sunMoon =
@@ -273,8 +268,6 @@ export class WeatherComponent implements OnInit {
             $('#dark').style.strokeDashoffset = `${383 - dark}`;
           }
         }
-        httpcheck.open('POST', './prevcookie.php');
-        httpcheck.send();
 
         $('#sunrise span:first-child').innerText = times(data.today.sunrise)[0];
         $('#sunrise span:last-child').innerText = times(data.today.sunrise)[1];
