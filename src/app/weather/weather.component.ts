@@ -183,13 +183,14 @@ export class WeatherComponent implements OnInit {
       current.push(now.getHours());
       current.push(now.getMinutes());
       current.shift();
-      console.log(current);
-
       if (MIN(current) >= 0 && MIN(current) <= MIN(times(data.today.sunrise))) {
         DayBreakFlag = true;
       }
+      
+      console.log(MIN(current));
+      console.log(MIN(times(data.today.sunset)))
       if (
-        MIN(current) > MIN(times(data.today.sunset)) &&
+        MIN(current) > MIN(times(data.today.sunset)) ||
         DayBreakFlag == false
       ) {
         //OK
